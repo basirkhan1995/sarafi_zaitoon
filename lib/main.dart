@@ -4,7 +4,6 @@ import 'package:flutter_locales/flutter_locales.dart';
 import 'package:provider/provider.dart';
 import 'package:sarafi_zaitoon/Components/colors.dart';
 import 'package:sarafi_zaitoon/Provider/ui_provider.dart';
-import 'package:sarafi_zaitoon/Views/Onboarding/onboarding_view.dart';
 import 'package:sarafi_zaitoon/Views/Onboarding/select_language.dart';
 
 void main() {
