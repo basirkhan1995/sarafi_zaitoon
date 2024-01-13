@@ -40,7 +40,6 @@ class MyApp extends StatelessWidget {
               title: 'Sarafi',
               theme: ThemeData(
                 primaryColor: primaryColor,
-
                 fontFamily: locale.toString() == "en"?"Ubuntu":"Dubai",
                 useMaterial3: true,
               ),
