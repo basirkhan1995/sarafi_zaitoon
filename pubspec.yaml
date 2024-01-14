@@ -67,6 +67,7 @@ flutter:
   assets:
    - assets/onboarding/
    - assets/locales/
+   - assets/photos/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

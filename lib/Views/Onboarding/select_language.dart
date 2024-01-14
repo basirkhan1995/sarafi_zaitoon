@@ -17,52 +17,61 @@ class _SelectLanguageState extends State<SelectLanguage> {
   bool selectedItem = false;
   @override
   Widget build(BuildContext context) {
-    Size size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SizedBox(height: size.height /4),
-          const ListTile(
-            title: LocaleText("select_language"),
-          ),
-          Expanded(
-            child: Center(
-              child: ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: ctrl.items.length,
-                  itemBuilder: (context,index){
-                    selectedItem = currentIndex == index;
-                  return Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 15,vertical: 5),
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                        color: selectedItem? primaryColor : Colors.grey,
-                        width: selectedItem? 0 : 1
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SizedBox(height: 15),
+            const LocaleText("select_language",style: TextStyle(fontSize: 22),),
+            SizedBox(
+                height: MediaQuery.of(context).size.height*.4,
+                width: MediaQuery.of(context).size.width *.8,
+                child: Image.asset("assets/photos/locale.gif")),
+            Expanded(
+              flex: 2,
+              child: Center(
+                child: ListView.builder(
+                    shrinkWrap: true,
+                    itemCount: ctrl.items.length,
+                    itemBuilder: (context,index){
+                      selectedItem = currentIndex == index;
+                    return Container(
+                      height: 70,
+                      margin: const EdgeInsets.symmetric(horizontal: 15,vertical: 5),
+                      padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
+        
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(15),
+                        color: selectedItem? primaryColor : Colors.grey.withOpacity(.2)
                       ),
-                      borderRadius: BorderRadius.circular(8),
-                      color: selectedItem? primaryColor : Colors.transparent
-                    ),
-                    child: ListTile(
-                      onTap: (){
-                        setState(() {
-                          currentIndex = index;
-                          Locales.change(context, ctrl.items[index].localeCode);
-                        });
-                      },
-                      leading: Icon(ctrl.items[index].icon,color: selectedItem?Colors.white:Colors.black54),
-                      title: Text(ctrl.items[index].locale,style: TextStyle(color: selectedItem?Colors.white:Colors.black54),),
-                      trailing: selectedItem? Icon(Icons.check,size: 20,color: selectedItem?Colors.white:Colors.black54) : const SizedBox(),
-                    ),
-                  );
-              }),
+                      child: Center(
+                        child: ListTile(
+                          onTap: (){
+                            setState(() {
+                              currentIndex = index;
+                              Locales.change(context, ctrl.items[index].localeCode);
+                            });
+                          },
+                          //leading: Icon(ctrl.items[index].icon,color: selectedItem?Colors.white:Colors.black54),
+                          title: Text(ctrl.items[index].locale,style: TextStyle(color: selectedItem?Colors.white:Colors.black54),),
+                          trailing: selectedItem? Icon(Icons.check,size: 20,color: selectedItem?Colors.white:Colors.black54) : const SizedBox(),
+                        ),
+                      ),
+                    );
+                }),
+              ),
             ),
-          ),
-          ZButton(label: "next", press: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context)=>const OnboardingUi()));
-          }),
-          const SizedBox(height: 10),
-        ],
+            ZButton(
+                width: .93,
+                height: 60,
+                label: "next", press: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const OnboardingUi()));
+            }),
+            const SizedBox(height: 10),
+          ],
+        ),
       ),
     );
   }
@@ -78,7 +87,7 @@ class _SelectLanguageState extends State<SelectLanguage> {
 
  class LanguageItems{
   List<LanguageInfo> items = [
-    LanguageInfo(localeCode: "en", locale: "English", icon: Icons.language),
+    LanguageInfo(localeCode: "en", locale: "English (United States)", icon: Icons.language),
     LanguageInfo(localeCode: "fa", locale: "فارسی", icon: Icons.language),
     LanguageInfo(localeCode: "ps", locale: "پشتو", icon: Icons.language),
   ];

@@ -5,17 +5,25 @@ import 'package:sarafi_zaitoon/Components/colors.dart';
  class ZButton extends StatelessWidget {
    final String label;
    final VoidCallback press;
-   const ZButton({super.key, required this.label, required this.press});
+   final double width;
+   final double height;
+   const ZButton({super.key,
+     required this.label,
+     required this.press,
+     this.width = .9,
+     this.height = 55,
+   });
 
    @override
    Widget build(BuildContext context) {
      return Container(
-       width: MediaQuery.of(context).size.width *9,
+       width: MediaQuery.of(context).size.width * width,
        decoration: BoxDecoration(
          color: primaryColor,
          borderRadius: BorderRadius.circular(8)
        ),
-       height: 50,
+       height: height,
+
        margin: const EdgeInsets.symmetric(horizontal: 10,vertical: 5),
        child: Center(
          child: TextButton(
