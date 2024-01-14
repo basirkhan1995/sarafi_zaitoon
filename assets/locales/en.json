@@ -7,5 +7,9 @@
   "get_started": "Get started",
   "select_language": "Select App language ",
   "money_exchange_details": "Your money, our responsibility - Zaitoon Money Exchange",
-  "money_transfer_details": "Transfer money across Europe, America & Asia"
+  "money_transfer_details": "Transfer money across Europe, America & Asia",
+  "username": "Username",
+  "password": "Password",
+  "remember_me": "Remember me",
+  "login": "LOGIN"
 }

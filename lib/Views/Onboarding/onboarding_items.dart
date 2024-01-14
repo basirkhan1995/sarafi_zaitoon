@@ -11,10 +11,10 @@ import 'onboarding_info.dart';
      OnboardingInfo(
          title: "money_transfer",
          descriptions: "money_transfer_details",
-         image: "assets/onboarding/onboarding1.gif"),
+         image: "assets/onboarding/onboarding2.gif"),
      OnboardingInfo(
          title: "safe_transfer",
          descriptions: "safe_transfer_details",
-         image: "assets/onboarding/onboarding1.gif"),
+         image: "assets/onboarding/onboarding3.gif"),
    ];
  }

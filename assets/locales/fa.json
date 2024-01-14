@@ -7,5 +7,9 @@
   "get_started": "شروع",
   "select_language": "انتخاب زبان برنامه",
   "money_exchange_details": "پول از شما اعتماد از ما - خدمات پولی زیتون",
-  "money_transfer_details": "انتقال پول امن سر تا سر کشور های اروپایی، آمریکایی و آسیایی"
+  "money_transfer_details": "انتقال پول امن سر تا سر کشور های اروپایی، آمریکایی و آسیایی",
+  "username": "حساب کاربر",
+  "password": "کلمه عبور",
+  "remember_me": "مرا بخاطر بسپار",
+  "login": "ورود"
 }

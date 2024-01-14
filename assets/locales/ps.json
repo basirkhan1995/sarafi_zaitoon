@@ -7,5 +7,9 @@
   "get_started": "پیل",
   "select_language": "برنامه ژبه انتخاب",
   "money_exchange_details": "پول از شما اعتماد از ما - خدمات پولی زیتون",
-  "money_transfer_details": "انتقال پول امن سر تا سر کشور های اروپایی، آمریکایی و آسیایی"
+  "money_transfer_details": "انتقال پول امن سر تا سر کشور های اروپایی، آمریکایی و آسیایی",
+  "username": "کاربری حساب",
+  "password": "رمز",
+  "remember_me": "زه په یاد ولره",
+  "login": "ننوتل"
 }

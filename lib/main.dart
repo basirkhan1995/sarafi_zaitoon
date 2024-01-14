@@ -38,6 +38,7 @@ class MyApp extends StatelessWidget {
               debugShowCheckedModeBanner: false,
               title: 'Sarafi',
               theme: ThemeData(
+                scaffoldBackgroundColor: Colors.white,
                 primaryColor: primaryColor,
                 fontFamily: locale.toString() == "en"?"Ubuntu":"Dubai",
                 useMaterial3: true,
