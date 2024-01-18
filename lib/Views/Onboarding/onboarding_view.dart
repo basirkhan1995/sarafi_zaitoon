@@ -3,7 +3,6 @@ import 'package:flutter_locales/flutter_locales.dart';
 import 'package:sarafi_zaitoon/Views/Authentication/Login/login.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../Components/colors.dart';
-import '../hom.dart';
 import 'onboarding_items.dart';
 
 class OnboardingUi extends StatefulWidget {
