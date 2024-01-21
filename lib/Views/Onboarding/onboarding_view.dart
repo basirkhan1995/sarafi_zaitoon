@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_locales/flutter_locales.dart';
+import 'package:provider/provider.dart';
+import 'package:sarafi_zaitoon/Provider/ui_provider.dart';
 import 'package:sarafi_zaitoon/Views/Authentication/Login/login.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../Components/colors.dart';
@@ -84,12 +86,17 @@ class _OnboardingUiState extends State<OnboardingUi> {
           color: primaryColor,
           borderRadius: BorderRadius.circular(8)
       ),
-      child: TextButton(
-        onPressed: ()async{
-          if(!mounted)return;
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const LoginScreen()));
-        },
-        child: const LocaleText("get_started",style: TextStyle(color: Colors.white),),
+      child: Consumer<UiProvider>(
+        builder: (context,UiProvider notifier, child) {
+          return TextButton(
+            onPressed: ()async{
+              if(!mounted)return;
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const LoginScreen()));
+              notifier.disableOnboarding();
+            },
+            child: const LocaleText("get_started",style: TextStyle(color: Colors.white),),
+          );
+        }
       ),
     );
   }

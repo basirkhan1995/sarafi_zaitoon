@@ -4,7 +4,9 @@ import 'package:flutter_locales/flutter_locales.dart';
 import 'package:provider/provider.dart';
 import 'package:sarafi_zaitoon/Components/colors.dart';
 import 'package:sarafi_zaitoon/Provider/ui_provider.dart';
+import 'package:sarafi_zaitoon/Views/Authentication/Login/login.dart';
 import 'package:sarafi_zaitoon/Views/Onboarding/select_language.dart';
+import 'package:sarafi_zaitoon/Views/start.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,7 +45,7 @@ class MyApp extends StatelessWidget {
                 fontFamily: locale.toString() == "en"?"Ubuntu":"Dubai",
                 useMaterial3: true,
               ),
-              home: const SelectLanguage(),
+              home: notifier.isOnboarding? const SelectLanguage() : const LoginScreen(),
             )
           );
         }

@@ -3,7 +3,7 @@ import 'package:flutter_locales/flutter_locales.dart';
 import 'package:sarafi_zaitoon/Components/Methods/button.dart';
 import 'package:sarafi_zaitoon/Components/Methods/input_field.dart';
 import 'package:sarafi_zaitoon/Components/colors.dart';
-import 'package:sarafi_zaitoon/Views/hom.dart';
+import 'package:sarafi_zaitoon/Views/start.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -68,7 +68,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     label: "login",
                     press: (){
                       if(formKey.currentState!.validate()){
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const Home()));
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const StartScreen()));
                       }
                 })
 
