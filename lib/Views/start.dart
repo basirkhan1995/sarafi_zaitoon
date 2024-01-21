@@ -8,7 +8,6 @@ import 'package:sarafi_zaitoon/Views/BottomNavBar/Components/nav_info.dart';
   @override
   State<StartScreen> createState() => _StartScreenState();
 }
-
 class _StartScreenState extends State<StartScreen> {
    int currentIndex = 0;
    final controller = NavItems();
