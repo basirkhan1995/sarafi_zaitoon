@@ -11,5 +11,8 @@
   "username": "حساب کاربر",
   "password": "کلمه عبور",
   "remember_me": "مرا بخاطر بسپار",
-  "login": "ورود"
+  "login": "ورود",
+  "safe_transfer_details": "انتقال امن و سریع",
+  "username_required": "حساب کاربر خود را وارید نمایید",
+  "password_required": "رمز عبور را وارید نمایید"
 }

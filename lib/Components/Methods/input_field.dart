@@ -39,7 +39,6 @@ class InputField extends StatelessWidget {
              ),
              labelStyle: const TextStyle(color: primaryColor),
                hintStyle: const TextStyle(color: Colors.black54),
-
                label: LocaleText(label)
         ),
       ),

@@ -11,5 +11,8 @@
   "username": "کاربری حساب",
   "password": "رمز",
   "remember_me": "زه په یاد ولره",
-  "login": "ننوتل"
+  "login": "ننوتل",
+  "safe_transfer_details": "په خوندي او ګړندۍ توګه لیږدول",
+  "username_required": "کارن نوم اړین دی",
+  "password_required": "پاسورډ ته اړتیا ده"
 }

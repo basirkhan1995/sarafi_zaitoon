@@ -15,42 +15,64 @@ class _LoginScreenState extends State<LoginScreen> {
   final username = TextEditingController();
   final password = TextEditingController();
   bool isChecked = false;
-
+  final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                  width: size.width*.8,
-                  child: Image.asset("assets/photos/login.gif")),
-             InputField(
-                 label: "username",
-                 icon: Icons.account_circle_rounded,
-                 controller: username),
-              InputField(
-                  label: "password",
-                  icon: Icons.lock,
-                  controller: username),
-
-              ListTile(
-                horizontalTitleGap: 2,
-                leading: Checkbox(
-                    activeColor: primaryColor,
-                    value: isChecked,
-                    onChanged: (value)=>setState(()=> isChecked = !isChecked)
+      body: Form(
+        key: formKey,
+        child: Center(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                    width: size.width*.8,
+                    child: Image.asset("assets/photos/login.gif")),
+               InputField(
+                   label: "username",
+                   icon: Icons.account_circle_rounded,
+                   controller: username,
+                   validator: (value){
+                     if(value.isEmpty){
+                       return Locales.string(context, "username_required");
+                     }
+                     return null;
+                   },
+               ),
+                InputField(
+                    label: "password",
+                    icon: Icons.lock,
+                    controller: password,
+                    validator: (value){
+                    if(value.isEmpty){
+                      return Locales.string(context, "password_required");
+                    }
+                    return null;
+                  },
                 ),
-                title: const LocaleText("remember_me"),
-              ),
-              ZButton(
-                  height: 60,
-                  label: "login", press: (){})
 
-            ],
+                ListTile(
+                  horizontalTitleGap: 2,
+                  leading: Checkbox(
+                      activeColor: primaryColor,
+                      value: isChecked,
+                      onChanged: (value)=>setState(()=> isChecked = !isChecked)
+                  ),
+                  title: const LocaleText("remember_me"),
+                ),
+                ZButton(
+                    height: 60,
+                    label: "login",
+                    press: (){
+                      if(formKey.currentState!.validate()){
+
+                      }
+                })
+
+              ],
+            ),
           ),
         ),
       ),
